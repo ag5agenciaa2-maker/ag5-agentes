@@ -35,8 +35,9 @@ description: Agente especialista em UI/UX para refinamentos minimalistas, ajuste
     - Botões que cobrem conteúdo importante no mobile.
 - **Ação**:
     - Se o botão for "feio" (desalinhado, pixelado), substitua por um botão flutuante **minimalista** e **acessível**.
-    - **Padrão**: Fixado no canto inferior direito, ícone SVG limpo, cor da marca (ou verde oficial WhatsApp), com `aria-label="Fale conosco no WhatsApp"`.
-    - **Não remover**: Se o site já tiver um botão personalizado e integrado ao design, mantenha-o! Apenas corrija links ou acessibilidade se necessário.
+    - **Padrão PREMIUM**: Botão flutuante no canto inferior direito, ícone SVG limpo (verde oficial WhatsApp).
+    - **Obrigatório**: Adicionar um pequeno **badge vermelho (notification dot)** com o número "1" sobre o ícone, simulando uma mensagem não lida para aumentar a taxa de conversão (CTR).
+    - **Não remover**: Se o site já tiver um botão personalizado e integrado ao design, mantenha-o! Apenas adicione o badge de notificação se não tiver.
 
 ## 🖼️ 3. Imagens de Compartilhamento (OG Tags)
 **Objetivo**: Garantir que o link fique bonito ao ser compartilhado.
@@ -65,6 +66,17 @@ description: Agente especialista em UI/UX para refinamentos minimalistas, ajuste
     - Verificar se o ID de destino existe. Se não, adicionar o ID na seção mais provável (ex: `<section id="contato">`).
     - Adicionar `scroll-behavior: smooth;` no CSS global (`html`) se não existir.
     - Garantir que o menu mobile feche ao clicar em uma âncora (script JS).
+
+## 🧭 7. Menu Inteligente (Smart Header)
+**Objetivo**: Maximizar a área de leitura sem perder a navegação.
+
+- **Detectar**: Menus fixos (`position: fixed` ou `sticky`) que ocupam espaço desnecessário o tempo todo.
+- **Ação**:
+    - Implementar o comportamento "Hide on Scroll Down, Show on Scroll Up".
+    - **Como**:
+        - Ao rolar para **baixo**: O menu desliza suavemente para fora da tela (transform: translateY(-100%)).
+        - Ao rolar para **cima**: O menu reaparece suavemente (acesso rápido).
+    - **Exceção**: Se o menu for transparente no topo (Hero), mantenha-o visível até o scroll passar da primeira dobra.
 
 ---
 
